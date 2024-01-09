@@ -3,6 +3,7 @@ import SwiftUI
 
 struct PickView: View {
     @State var ShowSignedView: Bool = false;
+    @State var ShowSignedViewJoin: Bool = false;
     @State var showJoinView = false;
     @State var isSignedIn = false;
     @State var showBoard = false;
@@ -28,12 +29,14 @@ struct PickView: View {
                     Spacer().frame(height:40)
                     if isSignedIn {
                         NavigationLink(destination: OnlineBoardView(), label: {
-                            Text("Online mode")
+                            Text("Create an online game")
                                 .frame(width: 220, height: 60)
                                 .background(.blue)
                                 .foregroundColor(.white)
                                 .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10, height: 10)))
                         })
+                        
+                        
                     } else {
                         Button(action: {
                             if !isSignedIn {
@@ -46,18 +49,22 @@ struct PickView: View {
                                 .foregroundColor(.white)
                                 .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10, height: 10)))
                         })
-                        Button(action: {
-                            if !isSignedIn {
-                                showJoinView = true
-                            }
-                        }, label: {
-                            Text("Join an online game")
-                                .frame(width: 220, height: 60)
-                                .background(.blue)
-                                .foregroundColor(.white)
-                                .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10, height: 10)))
-                        })
+                       
                     }
+                    Button(action: {
+                        if !isSignedIn {
+                            ShowSignedViewJoin = true;
+                        }
+                        else{
+                            showJoinView = true;
+                        }
+                    }, label: {
+                        Text("Join an online game")
+                            .frame(width: 220, height: 60)
+                            .background(.blue)
+                            .foregroundColor(.white)
+                            .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10, height: 10)))
+                    })
                     Spacer().frame(height: 90)
                         .sheet(isPresented: $showJoinView, content: {
                             GameJoinView()
@@ -83,6 +90,19 @@ struct PickView: View {
                                     // This block will be executed when the sheet is dismissed
                                     if isSignedIn {
                                         showBoard = true // Assuming you want to show the BoardView when signed in
+                                    }
+                                }
+                        })
+                        .sheet(isPresented: $ShowSignedViewJoin, content: {
+                            SignInView(isSigned: $isSignedIn, showBoard: $showBoard)
+                                .frame(height: 500)
+                                .onChange(of: isSignedIn) { oldValue, newValue in
+                                    if newValue == true{
+                                        ShowSignedViewJoin = false;
+                                    }}
+                                .onDisappear {
+                                    if isSignedIn {
+                                        showJoinView = true;
                                     }
                                 }
                         })
