@@ -2,7 +2,7 @@ import SwiftUI
 import Foundation
 
 class OnlineGameObject: ObservableObject{
-    @Published var gameId = UUID.init().uuidString;
+    //var gameId = "";
     var players: [String] = [];
     @Published var winningType: ItemContent = .empty;
     @Published var items = Array(repeating: GridItemView(), count: 9){ didSet {

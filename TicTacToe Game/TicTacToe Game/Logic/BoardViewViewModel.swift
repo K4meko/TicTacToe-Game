@@ -2,7 +2,6 @@ import SwiftUI
 import Foundation
 
 class BoardViewViewModel: ObservableObject{
-    @Published var gameId = UUID.init().uuidString;
     var players: [String] = [];
     @Published var winningType: ItemContent = .empty;
     @Published var items = Array(repeating: GridItemView(), count: 9)

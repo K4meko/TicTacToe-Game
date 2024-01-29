@@ -26,8 +26,8 @@ struct SignInView: View {
                 }).frame(width: 250, height: 60).foregroundStyle(.white).background(.orange).clipShape(RoundedRectangle(cornerRadius: 10)).onTapGesture {
                     Task {
                         do {
-                            try await Auth.auth().signInAnonymously()
-                            print(Auth.auth().currentUser?.uid ?? "")
+                            try Auth.auth().signInAnonymously()
+                            print(Auth.auth().currentUser?.uid ?? "user id null")
                         } catch {
                             print("Error signing in: \(error)")
                         }
