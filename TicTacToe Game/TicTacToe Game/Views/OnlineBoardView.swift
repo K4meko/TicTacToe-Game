@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct OnlineBoardView: View {
-        @StateObject var controller = GameController()
+      //  @StateObject var controller = GameController()
         @StateObject var viewModel = OnlineGameObject()
         @State var showAlert = false;
 
@@ -10,11 +10,14 @@ struct OnlineBoardView: View {
                 HStack{
                     Group{
                         Text("Game ID: ").bold()
-                        Text("\(controller.gameId)")
+                       // Text("\(controller.gameId)")
                     }
                     
                     VStack{
-                        Button(action: {UIPasteboard.general.string = controller.gameId}, label: {
+                        Button(action: {
+                            // UIPasteboard.general.string = controller.gameId
+                        }
+                               , label: {
                             Image(systemName: "doc.on.clipboard").foregroundStyle(.blue)
                         })
                         Text("Copy")}.padding(.leading)
@@ -30,7 +33,7 @@ struct OnlineBoardView: View {
                         
                         Button(action: {
                             viewModel.makeMove(index)
-                            controller.makeMove(atIndex: index);
+                            //controller.makeMove(atIndex: index);
                         }, label: {
                             viewModel.items[index].padding().frame(width: 100, height: 100)
                         }).background(Color("White"))
@@ -59,7 +62,7 @@ struct OnlineBoardView: View {
             Button(action: {viewModel.resetGame()}, label: {
                 Text("Reset game").frame(width: 200, height: 50).background(.red).clipShape(RoundedRectangle(cornerRadius:10)).foregroundStyle(.white).padding(50)
             })            }.onAppear{
-                controller.createNewGame()
+              //  controller.createNewGame()
                 
             }
         }
