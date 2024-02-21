@@ -4,7 +4,7 @@ import SwiftUI
 struct GameJoinView: View {
     @Binding var joined: Bool
     @State private var gameId: String = ""
-    @StateObject var controller = GameController()
+//    @StateObject var controller = GameController()
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -15,7 +15,7 @@ struct GameJoinView: View {
                 Button("Join Game") {
                     if isValidGameId(gameId: gameId) {
                         // Join the game with the specified game ID
-                        controller.joinGame(gameId: gameId)
+//                        controller.joinGame(gameId: gameId)
                         print("Successfully joined the game!")
                         joined = true;
                     } else {

@@ -1,11 +1,9 @@
 import SwiftUI
-import FirebaseFirestore
 
 
 struct CrossBoardView: View {
         @StateObject var viewModel = OnlineGameObject();
         @State var showAlert = false;
-        let firestore = Firestore.firestore()
 
 
         var body: some View {

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import FirebaseAuth
 
 struct SignInView: View {
     @Binding var isSigned: Bool
@@ -23,22 +22,7 @@ struct SignInView: View {
                 }, label:{
                     Text("Sign in").shadow(color: .red, radius: 10)
                     
-                }).frame(width: 250, height: 60).foregroundStyle(.white).background(.orange).clipShape(RoundedRectangle(cornerRadius: 10)).onTapGesture {
-                    Task {
-                        do {
-                            try Auth.auth().signInAnonymously()
-                            print(Auth.auth().currentUser?.uid ?? "user id null")
-                        } catch {
-                            print("Error signing in: \(error)")
-                        }
-                        // Completion handler
-                        DispatchQueue.main.async {
-                            print("Completion handler executed")
-                        }
-                    }
-                    
-                    
-                }
+                }).frame(width: 250, height: 60).foregroundStyle(.white).background(.orange).clipShape(RoundedRectangle(cornerRadius: 10))
             }.frame(height: 500)}}
 }
 
