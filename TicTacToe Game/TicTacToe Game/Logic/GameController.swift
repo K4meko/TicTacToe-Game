@@ -72,21 +72,19 @@ class GameController: ObservableObject {
 //                }
 //                print("game path is: \(newGameRef.path)")
 //                print(gameId)    }
-//        
-//       
-        
-        func makeMove(atIndex index: Int) {
+    }
+    func makeMove(atIndex index: Int) {
 //            let data: [String: Any] = ["Current player is cross" : false]
 //            let data2: [String: Any] = ["index": index, "player:" : Auth.auth().currentUser?.uid ?? "empty"]
-//            
+//
 //              _ = firebaseAuth.currentUser!.uid
-//            
-//            
+//
+//
 //             Write the move to the database
 //                    let moveRef = firestore.collection("games").document(gameId)
 //                        .collection("moves").document(Auth.auth().currentUser!.uid)
 //                    moveRef.setData(data2)
-//            
+//
 //                    let moveData = ["index": index, "timestamp": Date()] as [String : Any]
 //                    moveRef.setData(moveData)
 //                    let newGameRef = firestore.collection("games").document(gameId)
@@ -99,10 +97,9 @@ class GameController: ObservableObject {
 //                        // End the game
 //                        gameRoom.endGame(tie: true)
 //                    }
-        }
-        
-        func joinGame(gameId: String){
-            //
-        }
+    }
+    
+    func joinGame(gameId: String){
+        //
     }
 }

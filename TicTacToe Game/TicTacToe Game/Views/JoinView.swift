@@ -15,14 +15,9 @@ struct GameJoinView: View {
                 Button("Join Game") {
                     if isValidGameId(gameId: gameId) {
                         // Join the game with the specified game ID
-                        controller.joinGame(gameId: gameId){ success in
-                            if success {
-                                print("Successfully joined the game!")
-                                joined = true;
-                            } else {
-                                print("Failed to join the game.")
-                            }
-                        }
+                        controller.joinGame(gameId: gameId)
+                        print("Successfully joined the game!")
+                        joined = true;
                     } else {
                         // Display an error message if the game ID is invalid
                         print("Invalid game ID: \(gameId)")
