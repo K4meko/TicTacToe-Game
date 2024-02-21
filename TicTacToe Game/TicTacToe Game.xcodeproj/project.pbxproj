@@ -46,7 +46,6 @@
 		EC3FAFD92B46A41E00380AA6 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = EC3FAFD82B46A41E00380AA6 /* FirebaseStorage */; };
 		EC3FAFDB2B46A41E00380AA6 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = EC3FAFDA2B46A41E00380AA6 /* FirebaseStorageCombine-Community */; };
 		EC3FAFE02B46A49200380AA6 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FAFDF2B46A49200380AA6 /* GameController.swift */; };
-		EC3FAFE22B46A54E00380AA6 /* FireBaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FAFE12B46A54E00380AA6 /* FireBaseAuth.swift */; };
 		EC3FAFE42B46A59800380AA6 /* GameRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FAFE32B46A59800380AA6 /* GameRoom.swift */; };
 		EC3FAFE62B46DC4100380AA6 /* PickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FAFE52B46DC4100380AA6 /* PickView.swift */; };
 		EC3FAFE82B46E3EF00380AA6 /* OnlineBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FAFE72B46E3EF00380AA6 /* OnlineBoardView.swift */; };
@@ -102,7 +101,6 @@
 /* Begin PBXFileReference section */
 		EC07A9502B59CCAD0090A64F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC3FAFDF2B46A49200380AA6 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
-		EC3FAFE12B46A54E00380AA6 /* FireBaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseAuth.swift; sourceTree = "<group>"; };
 		EC3FAFE32B46A59800380AA6 /* GameRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRoom.swift; sourceTree = "<group>"; };
 		EC3FAFE52B46DC4100380AA6 /* PickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickView.swift; sourceTree = "<group>"; };
 		EC3FAFE72B46E3EF00380AA6 /* OnlineBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineBoardView.swift; sourceTree = "<group>"; };
@@ -211,7 +209,6 @@
 				EC3FAFE92B46E50100380AA6 /* OnlineGameObject.swift */,
 				EC3FAFDF2B46A49200380AA6 /* GameController.swift */,
 				EC3FAFE32B46A59800380AA6 /* GameRoom.swift */,
-				EC3FAFE12B46A54E00380AA6 /* FireBaseAuth.swift */,
 				EC3FAFED2B470B7800380AA6 /* Invite.swift */,
 				EC3FAFEB2B4707AD00380AA6 /* GameView.swift */,
 			);
@@ -447,7 +444,6 @@
 				ECBA439B2B50913C00348EEA /* CircleBoardView.swift in Sources */,
 				EC3FAFE82B46E3EF00380AA6 /* OnlineBoardView.swift in Sources */,
 				ECD1B9C02B41680600B34398 /* BoardViewViewModel.swift in Sources */,
-				EC3FAFE22B46A54E00380AA6 /* FireBaseAuth.swift in Sources */,
 				EC3FB02C2B475D2D00380AA6 /* SignInView.swift in Sources */,
 				ECBA439D2B50915100348EEA /* CrossBoardView.swift in Sources */,
 				EC9453B72B3D047F005CBAEB /* ContentView.swift in Sources */,

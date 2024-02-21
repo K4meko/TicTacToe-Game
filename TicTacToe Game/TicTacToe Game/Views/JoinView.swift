@@ -2,8 +2,8 @@ import Foundation
 import SwiftUI
 
 struct GameJoinView: View {
-    @Binding var joined: Bool
-    @State private var gameId: String = ""
+    @Binding var gameId: String;
+    @Binding var show: Bool;
 //    @StateObject var controller = GameController()
 
     var body: some View {
@@ -16,8 +16,9 @@ struct GameJoinView: View {
                     if isValidGameId(gameId: gameId) {
                         // Join the game with the specified game ID
 //                        controller.joinGame(gameId: gameId)
+                        show = false
                         print("Successfully joined the game!")
-                        joined = true;
+                    
                     } else {
                         // Display an error message if the game ID is invalid
                         print("Invalid game ID: \(gameId)")

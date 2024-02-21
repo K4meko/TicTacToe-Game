@@ -23,8 +23,26 @@ struct MoveData : SocketData {
 
 
 class GameController: ObservableObject {
+ 
+    @State var gameModel = viewmodel;
+    private var moveListener: ListenerRegistration?
+    @Published var isCross = true;
+    @Published var gameId: String = ""
+    
+    func createNewGame() {
+        self.gameId = UUID.init().uuidString
+        socket.emit("join", [gameId])
+    }
+    func makeMove(atIndex index: Int) {
+        socket.emit("move", MoveData(room: self.gameId, index: index))
+        isCross.toggle()
+    }
+    
+    func joinGame(gameId: String){
+        self.gameId = gameId
+        socket.emit("join", [gameId])
+    }
     init() {
-        self.gameRoom = GameRoom()
         socket.on(clientEvent: .connect) {data, ack in
             print("socket connected")
         }
@@ -34,24 +52,5 @@ class GameController: ObservableObject {
         }
         
         socket.connect()
-    }
-    @State var gameModel = viewmodel;
-    private var moveListener: ListenerRegistration?
-//    @State var gameModel = viewmodel
-    let gameRoom: GameRoom
-    var isCross = true;
-    @Published var gameId: String = ""
-    
-    func createNewGame() {
-        self.gameId = UUID.init().uuidString
-        socket.emit("join", [gameId])
-    }
-    func makeMove(atIndex index: Int) {
-        socket.emit("move", MoveData(room: self.gameId, index: index))
-    }
-    
-    func joinGame(gameId: String){
-        self.gameId = gameId
-        socket.emit("join", [gameId])
     }
 }

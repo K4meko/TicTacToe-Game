@@ -10,7 +10,7 @@ struct CircleBoardView: View {
                 HStack{
                     Group{
                         Text("Game ID: ").bold()
-                        Text("\(controller.gameId)")
+                        Text("\(controller.gameId ?? "Game id doesn't exist just yet")")
                     }
                     
                     VStack{
@@ -31,10 +31,10 @@ struct CircleBoardView: View {
                 ]) {
                     ForEach(0 ..< 9) { index in
                         
-                        Button(action: {
+                        Button(action: { if (controller.isCross == false){
                             viewModel.items[index].changeState(newState: .circle);
-                            viewModel.circles = viewModel.circles + 1
-                        //    controller.makeMove(atIndex: index);
+                            viewModel.circles = viewModel.circles + 1}
+                            controller.makeMove(atIndex: index);
                         }, label: {
                             viewModel.items[index].padding().frame(width: 100, height: 100)
                         }).background(Color("White"))

@@ -16,7 +16,7 @@ struct CrossBoardView: View {
                     }
                     VStack{
                         Button(action: {
-                           // UIPasteboard.general.string = controller.gameId
+                            UIPasteboard.general.string = controller.gameId
                         }, label: {
                             Image(systemName: "doc.on.clipboard").foregroundStyle(.blue)
                         })
@@ -32,9 +32,12 @@ struct CrossBoardView: View {
                     ForEach(0 ..< 9) { index in
                         
                         Button(action: {
-                            _ = viewModel.items[index].changeState(newState: .cross);
-                            viewModel.crosses = viewModel.crosses + 1
-                           // controller.makeMove(atIndex: index);
+                            if controller.isCross == true{
+                                
+                                _ = viewModel.items[index].changeState(newState: .cross);
+                                viewModel.crosses = viewModel.crosses + 1
+                                controller.makeMove(atIndex: index);
+                            }
                         }, label: {
                             viewModel.items[index].padding().frame(width: 100, height: 100)
                         }).background(Color("White"))

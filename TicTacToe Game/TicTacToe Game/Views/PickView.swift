@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct PickView: View {
+    @State var gameId:String = ""
     @State var ShowSignedView: Bool = false
     @State var ShowSignedViewJoin: Bool = false
     @State var isJoined = false;
@@ -31,7 +32,6 @@ struct PickView: View {
                 Spacer().frame(height: 40)
                 
                 Button(action: {
-                    isSignedIn = true
                     controller.createNewGame()
                     showCrossBoard = true
                     
@@ -44,7 +44,7 @@ struct PickView: View {
                 })
                 
                 Button(action: {
-                    //showJoinView = true
+                   showJoinView = true
                 }, label: {
                     Text("Join an online game")
                         .frame(width: 220, height: 60)
@@ -54,10 +54,15 @@ struct PickView: View {
                 })
 
             }.navigationDestination(isPresented: $showCrossBoard) {
-                CrossBoardView().environmentObject(controller)
+                CrossBoardView()
             }
+            .sheet(isPresented: $showJoinView, content: {GameJoinView(gameId: $gameId, show: $showJoinView
+            ).onDisappear{
+                controller.joinGame(gameId: gameId)
+            }
+            })
             .navigationDestination(isPresented: $showCircleBoard) {
-                CircleBoardView().environmentObject(controller)
+                CircleBoardView()
             }
                 
             }

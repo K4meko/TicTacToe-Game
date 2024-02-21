@@ -5,6 +5,7 @@ struct OnlineBoardView: View {
         @StateObject var viewModel = OnlineGameObject()
         @State var showAlert = false;
 
+      
         var body: some View {
             VStack{
                 HStack{
@@ -32,9 +33,10 @@ struct OnlineBoardView: View {
                     ForEach(0 ..< 9) { index in
                         
                         Button(action: {
-                            viewModel.makeMove(index)
-                            //controller.makeMove(atIndex: index);
-                        }, label: {
+                            if controller.isCross == true{
+                                viewModel.makeMove(index)
+                                controller.makeMove(atIndex: index);
+                            }}, label: {
                             viewModel.items[index].padding().frame(width: 100, height: 100)
                         }).background(Color("White"))
                     }
