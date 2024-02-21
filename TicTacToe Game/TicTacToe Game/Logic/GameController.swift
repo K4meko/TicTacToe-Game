@@ -12,6 +12,15 @@ var viewmodel: OnlineGameObject = OnlineGameObject()
 let manager = SocketManager(socketURL: URL(string: "http://localhost:3000")!, config: [.log(false), .compress])
 let socket = manager.defaultSocket
 
+struct MoveData : SocketData {
+    let room: String
+    let index: Int
+
+    func socketRepresentation() -> SocketData {
+        return ["room": room, "index": index]
+    }
+ }
+
 
 class GameController: ObservableObject {
     init() {
@@ -35,14 +44,14 @@ class GameController: ObservableObject {
     
     func createNewGame() {
         self.gameId = UUID.init().uuidString
-        print(self.gameId)
         socket.emit("join", [gameId])
     }
     func makeMove(atIndex index: Int) {
-        
+        socket.emit("move", MoveData(room: self.gameId, index: index))
     }
     
     func joinGame(gameId: String){
-        //
+        self.gameId = gameId
+        socket.emit("join", [gameId])
     }
 }
