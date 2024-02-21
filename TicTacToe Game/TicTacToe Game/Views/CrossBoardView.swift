@@ -3,15 +3,16 @@ import SwiftUI
 
 struct CrossBoardView: View {
         @StateObject var viewModel = OnlineGameObject();
+        @StateObject var controller = GameController()
         @State var showAlert = false;
 
 
         var body: some View {
-            VStack{
+            VStack {
                 HStack{
                     Group{
                         Text("Game ID: ").bold()
-                       // Text("\(controller.gameId)")
+                        Text("\(controller.gameId)")
                     }
                     VStack{
                         Button(action: {
@@ -65,6 +66,8 @@ struct CrossBoardView: View {
 //                controller.createNewGame()
 //                controller.startListeningForMoves()
 //                
+            }.onAppear() {
+                print("id: " + controller.gameId)
             }
            
         }

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct OnlineBoardView: View {
-      //  @StateObject var controller = GameController()
+        @StateObject var controller = GameController()
         @StateObject var viewModel = OnlineGameObject()
         @State var showAlert = false;
 
@@ -10,7 +10,7 @@ struct OnlineBoardView: View {
                 HStack{
                     Group{
                         Text("Game ID: ").bold()
-                       // Text("\(controller.gameId)")
+                        Text("\(controller.gameId)")
                     }
                     
                     VStack{

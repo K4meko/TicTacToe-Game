@@ -8,6 +8,7 @@ struct PickView: View {
     @State var isSignedIn = false
     @State var showCircleBoard = false
     @State var showCrossBoard = false
+    @StateObject var controller = GameController()
 
     var body: some View {
         NavigationStack {
@@ -30,10 +31,9 @@ struct PickView: View {
                 Spacer().frame(height: 40)
                 
                 Button(action: {
-                   
-                 //   if let _ = Auth.auth().currentUser?.uid {
-                      //  ShowSignedView = true
-                 // }
+                    isSignedIn = true
+                    showCrossBoard = true
+                    controller.createNewGame()
                     
                 }, label: {
                     Text("Create an online game")
@@ -52,44 +52,6 @@ struct PickView: View {
                         .foregroundColor(.white)
                         .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10, height: 10)))
                 })
-                Spacer().frame(height: 90)
-                    .sheet(isPresented: $showJoinView, content: {
-                        GameJoinView(joined: $showJoinView)
-                            .frame(height: 500)
-                            .onDisappear(){
-                                showCircleBoard = true;
-                            }
-                    })
-//                    .sheet(isPresented: $ShowSignedView, content: {
-//                        SignInView(isSigned: $isSignedIn, showBoard: $showCircleBoard)
-//                            .frame(height: 500)
-////                            .onChange(of: isSignedIn) { _, newValue in
-////                                if newValue == true {
-////                                    ShowSignedView = false
-////                                }
-////                            }
-////                            .onDisappear {
-////                                if isSignedIn {
-////                                    print("s")
-////                                    showCrossBoard = true
-////                                }
-////                            }
-//                    })
-//                    .sheet(isPresented: $ShowSignedViewJoin, content: {
-//                        SignInView(isSigned: $isSignedIn, showBoard: $showCircleBoard)
-//                            .frame(height: 500)
-//                            .onChange(of: isSignedIn) { _, newValue in
-//                                if newValue == true {
-//                                    ShowSignedViewJoin = false
-//                                }
-//                            }
-//                            .onDisappear {
-//                                if isSignedIn {
-//                                    showJoinView = true
-//                                }
-//                            }
-//                    })
-                    .tint(.red)
 
             }.navigationDestination(isPresented: $showCrossBoard) {
                 CrossBoardView()

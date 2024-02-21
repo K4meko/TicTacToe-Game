@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CircleBoardView: View {
-  //  @StateObject var controller = GameController()
+    @StateObject var controller = GameController()
     @StateObject var viewModel = OnlineGameObject();
     @State var showAlert = false;
 
@@ -10,7 +10,7 @@ struct CircleBoardView: View {
                 HStack{
                     Group{
                         Text("Game ID: ").bold()
-                       // Text("\(controller.gameId)")
+                        Text("\(controller.gameId)")
                     }
                     
                     VStack{
