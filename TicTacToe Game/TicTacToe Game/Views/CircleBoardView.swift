@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CircleBoardView: View {
-    @StateObject var controller = GameController()
+    @EnvironmentObject var controller: GameController
     @StateObject var viewModel = OnlineGameObject();
     @State var showAlert = false;
 

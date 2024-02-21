@@ -8,7 +8,7 @@ struct PickView: View {
     @State var isSignedIn = false
     @State var showCircleBoard = false
     @State var showCrossBoard = false
-    @StateObject var controller = GameController()
+    @EnvironmentObject var controller: GameController
 
     var body: some View {
         NavigationStack {
@@ -32,8 +32,8 @@ struct PickView: View {
                 
                 Button(action: {
                     isSignedIn = true
-                    showCrossBoard = true
                     controller.createNewGame()
+                    showCrossBoard = true
                     
                 }, label: {
                     Text("Create an online game")
@@ -54,10 +54,10 @@ struct PickView: View {
                 })
 
             }.navigationDestination(isPresented: $showCrossBoard) {
-                CrossBoardView()
+                CrossBoardView().environmentObject(controller)
             }
             .navigationDestination(isPresented: $showCircleBoard) {
-                CircleBoardView()
+                CircleBoardView().environmentObject(controller)
             }
                 
             }

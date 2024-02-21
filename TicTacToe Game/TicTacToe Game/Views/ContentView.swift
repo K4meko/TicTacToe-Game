@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var controller = GameController()
     var body: some View {
         VStack {
-            PickView()
+            PickView().environmentObject(controller)
         }
        
     }

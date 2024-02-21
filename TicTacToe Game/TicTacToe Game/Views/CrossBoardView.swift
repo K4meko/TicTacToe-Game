@@ -3,7 +3,7 @@ import SwiftUI
 
 struct CrossBoardView: View {
         @StateObject var viewModel = OnlineGameObject();
-        @StateObject var controller = GameController()
+        @EnvironmentObject var controller: GameController
         @State var showAlert = false;
 
 
