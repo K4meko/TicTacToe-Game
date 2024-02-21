@@ -61,35 +61,35 @@ struct PickView: View {
                                 showCircleBoard = true;
                             }
                     })
-                    .sheet(isPresented: $ShowSignedView, content: {
-                        SignInView(isSigned: $isSignedIn, showBoard: $showCircleBoard)
-                            .frame(height: 500)
+//                    .sheet(isPresented: $ShowSignedView, content: {
+//                        SignInView(isSigned: $isSignedIn, showBoard: $showCircleBoard)
+//                            .frame(height: 500)
+////                            .onChange(of: isSignedIn) { _, newValue in
+////                                if newValue == true {
+////                                    ShowSignedView = false
+////                                }
+////                            }
+////                            .onDisappear {
+////                                if isSignedIn {
+////                                    print("s")
+////                                    showCrossBoard = true
+////                                }
+////                            }
+//                    })
+//                    .sheet(isPresented: $ShowSignedViewJoin, content: {
+//                        SignInView(isSigned: $isSignedIn, showBoard: $showCircleBoard)
+//                            .frame(height: 500)
 //                            .onChange(of: isSignedIn) { _, newValue in
 //                                if newValue == true {
-//                                    ShowSignedView = false
+//                                    ShowSignedViewJoin = false
 //                                }
 //                            }
 //                            .onDisappear {
 //                                if isSignedIn {
-//                                    print("s")
-//                                    showCrossBoard = true
+//                                    showJoinView = true
 //                                }
 //                            }
-                    })
-                    .sheet(isPresented: $ShowSignedViewJoin, content: {
-                        SignInView(isSigned: $isSignedIn, showBoard: $showCircleBoard)
-                            .frame(height: 500)
-                            .onChange(of: isSignedIn) { _, newValue in
-                                if newValue == true {
-                                    ShowSignedViewJoin = false
-                                }
-                            }
-                            .onDisappear {
-                                if isSignedIn {
-                                    showJoinView = true
-                                }
-                            }
-                    })
+//                    })
                     .tint(.red)
 
             }.navigationDestination(isPresented: $showCrossBoard) {
