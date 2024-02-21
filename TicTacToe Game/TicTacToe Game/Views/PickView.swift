@@ -33,7 +33,7 @@ struct PickView: View {
                 Button(action: {
                    
                  //   if let _ = Auth.auth().currentUser?.uid {
-                        ShowSignedView = true
+                      //  ShowSignedView = true
                  // }
                     
                 }, label: {
@@ -45,7 +45,7 @@ struct PickView: View {
                 })
                 
                 Button(action: {
-                    showJoinView = true
+                    //showJoinView = true
                 }, label: {
                     Text("Join an online game")
                         .frame(width: 220, height: 60)
@@ -57,11 +57,6 @@ struct PickView: View {
                     .sheet(isPresented: $showJoinView, content: {
                         GameJoinView(joined: $showJoinView)
                             .frame(height: 500)
-                            .onAppear() {
-                                if !isSignedIn {
-                                    Auth.auth().signInAnonymously()
-                                }
-                            }
                             .onDisappear(){
                                 showCircleBoard = true;
                             }
@@ -69,17 +64,17 @@ struct PickView: View {
                     .sheet(isPresented: $ShowSignedView, content: {
                         SignInView(isSigned: $isSignedIn, showBoard: $showCircleBoard)
                             .frame(height: 500)
-                            .onChange(of: isSignedIn) { _, newValue in
-                                if newValue == true {
-                                    ShowSignedView = false
-                                }
-                            }
-                            .onDisappear {
-                                if isSignedIn {
-                                    print("s")
-                                    showCrossBoard = true
-                                }
-                            }
+//                            .onChange(of: isSignedIn) { _, newValue in
+//                                if newValue == true {
+//                                    ShowSignedView = false
+//                                }
+//                            }
+//                            .onDisappear {
+//                                if isSignedIn {
+//                                    print("s")
+//                                    showCrossBoard = true
+//                                }
+//                            }
                     })
                     .sheet(isPresented: $ShowSignedViewJoin, content: {
                         SignInView(isSigned: $isSignedIn, showBoard: $showCircleBoard)
@@ -104,8 +99,6 @@ struct PickView: View {
                 CircleBoardView()
             }
                 
-            }.onAppear{Auth.auth().signInAnonymously()
-               // isSignedIn = true
             }
         }
     }
