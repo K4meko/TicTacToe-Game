@@ -35,6 +35,7 @@ class GameController: ObservableObject {
     }
     func makeMove(atIndex index: Int) {
         socket.emit("move", MoveData(room: self.gameId, index: index))
+        viewmodel.makeMove(index)
         isCross.toggle()
     }
     

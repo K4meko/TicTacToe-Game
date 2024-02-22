@@ -4,7 +4,6 @@ struct PickView: View {
     @State var gameId:String = ""
     @State var ShowSignedView: Bool = false
     @State var ShowSignedViewJoin: Bool = false
-    @State var isJoined = false;
     @State var showJoinView = false
     @State var isSignedIn = false
     @State var showCircleBoard = false
@@ -59,6 +58,7 @@ struct PickView: View {
             .sheet(isPresented: $showJoinView, content: {GameJoinView(gameId: $gameId, show: $showJoinView
             ).onDisappear{
                 controller.joinGame(gameId: gameId)
+                showCircleBoard = true
             }
             })
             .navigationDestination(isPresented: $showCircleBoard) {
