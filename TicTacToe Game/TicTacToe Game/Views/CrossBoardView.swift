@@ -2,7 +2,6 @@ import SwiftUI
 
 
 struct CrossBoardView: View {
-        @StateObject var viewModel = OnlineGameObject();
         @EnvironmentObject var controller: GameController
         @State var showAlert = false;
 
@@ -34,36 +33,40 @@ struct CrossBoardView: View {
                         Button(action: {
                             if controller.isCross == true{
                                 
-                                _ = viewModel.items[index].changeState(newState: .cross);
-                                viewModel.crosses = viewModel.crosses + 1
                                 controller.makeMove(atIndex: index);
                             }
+                            else{
+                                return
+                            }
                         }, label: {
-                            viewModel.items[index].padding().frame(width: 100, height: 100)
+                            controller.items[index].padding().frame(width: 100, height: 100)
                         }).background(Color("White"))
                     }
                 }.background(Color("Black"))
-            }.onChange(of: viewModel.crosses, { _, newValue in
+            }.onChange(of: controller.crosses, { _, newValue in
                 if newValue > 2 {
-                    if viewModel.checkForWinningCombination(grid: viewModel.items) { showAlert = true;}
+                    if controller.checkForWinningCombination(grid: controller.items) { showAlert = true;}
                 }
-            }).alert(viewModel.winningType == .cross ? "Crosses win" : "Circles win", isPresented: $showAlert, actions: {
+            })
+            .onChange(of: controller.circles, { _, newValue in
+                if newValue > 2 {
+                    if controller.checkForWinningCombination(grid: controller.items) { showAlert = true;}
+                }
+            })
+            
+            .alert(controller.winningType == .cross ? "Crosses win" : "Circles win", isPresented: $controller.isWon, actions: {
                 Button("Reset Game") {
-                    viewModel.resetGame()
+                    controller.resetGame()
                 }
                 Button("Ok"){
                     
                 }
             }) {
                 Text("Congratulations!")
-            }.onChange(of: viewModel.circles, { _, newValue in
-                if newValue > 2 {
-                    if viewModel.checkForWinningCombination(grid: viewModel.items) { showAlert = true;}
-                }
-            })
+            }
             
     .frame(width: 315, height: 315)
-            Button(action: {viewModel.resetGame()}, label: {
+            Button(action: {controller.resetGame()}, label: {
                 Text("Reset game").frame(width: 200, height: 50).background(.red).clipShape(RoundedRectangle(cornerRadius:10)).foregroundStyle(.white).padding(50)
             })            }.onAppear {
 //                controller.createNewGame()

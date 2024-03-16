@@ -12,7 +12,6 @@
 		EC07A94B2B59CC350090A64F /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EC07A94A2B59CC350090A64F /* FirebaseAnalyticsSwift */; };
 		EC07A94D2B59CC350090A64F /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = EC07A94C2B59CC350090A64F /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		EC07A94F2B59CC350090A64F /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = EC07A94E2B59CC350090A64F /* FirebaseAppCheck */; };
-		EC07A9512B59CCAD0090A64F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC07A9502B59CCAD0090A64F /* GoogleService-Info.plist */; };
 		EC2C3CEC2B557BEB00355937 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EC2C3CEB2B557BEB00355937 /* FirebaseAnalytics */; };
 		EC2C3CEE2B557BEB00355937 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = EC2C3CED2B557BEB00355937 /* FirebaseAnalyticsOnDeviceConversion */; };
 		EC2C3CF02B557BEB00355937 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EC2C3CEF2B557BEB00355937 /* FirebaseAnalyticsSwift */; };
@@ -46,12 +45,8 @@
 		EC3FAFD92B46A41E00380AA6 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = EC3FAFD82B46A41E00380AA6 /* FirebaseStorage */; };
 		EC3FAFDB2B46A41E00380AA6 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = EC3FAFDA2B46A41E00380AA6 /* FirebaseStorageCombine-Community */; };
 		EC3FAFE02B46A49200380AA6 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FAFDF2B46A49200380AA6 /* GameController.swift */; };
-		EC3FAFE42B46A59800380AA6 /* GameRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FAFE32B46A59800380AA6 /* GameRoom.swift */; };
 		EC3FAFE62B46DC4100380AA6 /* PickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FAFE52B46DC4100380AA6 /* PickView.swift */; };
 		EC3FAFE82B46E3EF00380AA6 /* OnlineBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FAFE72B46E3EF00380AA6 /* OnlineBoardView.swift */; };
-		EC3FAFEA2B46E50100380AA6 /* OnlineGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FAFE92B46E50100380AA6 /* OnlineGameObject.swift */; };
-		EC3FAFEC2B4707AD00380AA6 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FAFEB2B4707AD00380AA6 /* GameView.swift */; };
-		EC3FAFEE2B470B7800380AA6 /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FAFED2B470B7800380AA6 /* Invite.swift */; };
 		EC3FAFF02B47344B00380AA6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EC3FAFEF2B47344B00380AA6 /* FirebaseAnalytics */; };
 		EC3FAFF22B47344B00380AA6 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = EC3FAFF12B47344B00380AA6 /* FirebaseAnalyticsOnDeviceConversion */; };
 		EC3FAFF42B47344B00380AA6 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EC3FAFF32B47344B00380AA6 /* FirebaseAnalyticsSwift */; };
@@ -99,14 +94,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EC07A9502B59CCAD0090A64F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC3FAFDF2B46A49200380AA6 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
-		EC3FAFE32B46A59800380AA6 /* GameRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRoom.swift; sourceTree = "<group>"; };
 		EC3FAFE52B46DC4100380AA6 /* PickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickView.swift; sourceTree = "<group>"; };
 		EC3FAFE72B46E3EF00380AA6 /* OnlineBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineBoardView.swift; sourceTree = "<group>"; };
-		EC3FAFE92B46E50100380AA6 /* OnlineGameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineGameObject.swift; sourceTree = "<group>"; };
-		EC3FAFEB2B4707AD00380AA6 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		EC3FAFED2B470B7800380AA6 /* Invite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
 		EC3FB02B2B475D2D00380AA6 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		EC9453B12B3D047F005CBAEB /* TicTacToe Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TicTacToe Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9453B42B3D047F005CBAEB /* TicTacToe_GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToe_GameApp.swift; sourceTree = "<group>"; };
@@ -206,11 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				ECD1B9BF2B41680600B34398 /* BoardViewViewModel.swift */,
-				EC3FAFE92B46E50100380AA6 /* OnlineGameObject.swift */,
 				EC3FAFDF2B46A49200380AA6 /* GameController.swift */,
-				EC3FAFE32B46A59800380AA6 /* GameRoom.swift */,
-				EC3FAFED2B470B7800380AA6 /* Invite.swift */,
-				EC3FAFEB2B4707AD00380AA6 /* GameView.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -218,7 +204,6 @@
 		EC9453A82B3D047F005CBAEB = {
 			isa = PBXGroup;
 			children = (
-				EC07A9502B59CCAD0090A64F /* GoogleService-Info.plist */,
 				EC9453B32B3D047F005CBAEB /* TicTacToe Game */,
 				EC9453B22B3D047F005CBAEB /* Products */,
 			);
@@ -405,7 +390,6 @@
 			files = (
 				EC9453BC2B3D0480005CBAEB /* Preview Assets.xcassets in Resources */,
 				EC9453B92B3D0480005CBAEB /* Assets.xcassets in Resources */,
-				EC07A9512B59CCAD0090A64F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,10 +421,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC3FAFE62B46DC4100380AA6 /* PickView.swift in Sources */,
-				EC3FAFE42B46A59800380AA6 /* GameRoom.swift in Sources */,
 				EC9453C32B3D0490005CBAEB /* BoardView.swift in Sources */,
 				EC3FAFE02B46A49200380AA6 /* GameController.swift in Sources */,
-				EC3FAFEE2B470B7800380AA6 /* Invite.swift in Sources */,
 				ECBA439B2B50913C00348EEA /* CircleBoardView.swift in Sources */,
 				EC3FAFE82B46E3EF00380AA6 /* OnlineBoardView.swift in Sources */,
 				ECD1B9C02B41680600B34398 /* BoardViewViewModel.swift in Sources */,
@@ -449,9 +431,7 @@
 				EC9453B72B3D047F005CBAEB /* ContentView.swift in Sources */,
 				EC9453C62B3D0897005CBAEB /* GridItem.swift in Sources */,
 				EC9453B52B3D047F005CBAEB /* TicTacToe_GameApp.swift in Sources */,
-				EC3FAFEC2B4707AD00380AA6 /* GameView.swift in Sources */,
 				ECCECC9A2B4A12AB0055D6C1 /* JoinView.swift in Sources */,
-				EC3FAFEA2B46E50100380AA6 /* OnlineGameObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 
 struct GameJoinView: View {
+    @EnvironmentObject var controller: GameController
     @Binding var gameId: String;
     @Binding var show: Bool;
 //    @StateObject var controller = GameController()
@@ -15,7 +16,7 @@ struct GameJoinView: View {
                 Button("Join Game") {
                     if isValidGameId(gameId: gameId) {
                         // Join the game with the specified game ID
-//                        controller.joinGame(gameId: gameId)
+                        controller.joinGame(gameId: gameId)
                         show = false
                         print("Successfully joined the game!")
                     

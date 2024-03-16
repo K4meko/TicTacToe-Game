@@ -66,4 +66,9 @@ struct GridItemView: View {
         }
     }
 }
+struct Game: Codable {
+    let board: [Int?]
+    let currentPlayer: Int
+    let winner: Int?
+}
 
