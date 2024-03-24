@@ -42,10 +42,14 @@ class GameController: ObservableObject {
     func createNewGame() {
         self.gameId = UUID.init().uuidString
         socket.emit("join", [gameId])
+        isCross = true
     }
     func makeMove(atIndex index: Int) {
         socket.emit("move", MoveData(room: self.gameId, index: index))
-        if items[index].changeState(newState: isCross ? .cross : .circle) {  if isCross { crosses = crosses + 1 } else { circles = circles + 1 }; print("crosses: \(crosses), circles: \(circles)") }
+        if items[index].changeState(newState: isCross ? .cross : .circle) { 
+            if isCross { crosses = crosses + 1 }
+            else { circles = circles + 1 };
+            print("crosses: \(crosses), circles: \(circles)") }
         
     }
     
@@ -56,13 +60,13 @@ class GameController: ObservableObject {
     }
     
     init() {
+        
         socket.on("updateGame") { data, _ in
             print(data)
             let jsonString =
            """
                                     \(data)
                                     """
-
             let jsonData = jsonString.data(using: .utf8)! // Unwrap assuming valid UTF-8
             do {
                     let games = try JSONDecoder().decode([Game].self, from: jsonData)
@@ -117,6 +121,10 @@ class GameController: ObservableObject {
         stringItems = items.map { $0.description }
     }
     func resetGame(){
+//        socket.emit("move", MoveData(room: self.gameId, index: index))
+//        if items[index].changeState(newState: isCross ? .cross : .circle) {  if isCross { crosses = crosses + 1 } else { circles = circles + 1 }; print("crosses: \(crosses), circles: \(circles)") }
+        socket.emit("reset", [gameId])
+                    
         items = Array(repeating: GridItemView(), count: 9)
         crosses = 0
         circles = 0

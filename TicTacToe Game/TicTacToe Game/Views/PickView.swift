@@ -56,10 +56,11 @@ struct PickView: View {
                 CrossBoardView()
             }
             .sheet(isPresented: $showJoinView, content: {GameJoinView(gameId: $gameId, show: $showJoinView
-            ).onDisappear{
-                controller.joinGame(gameId: gameId)
-                showCircleBoard = true
-            }
+            )
+                //               .onDisappear{
+//                controller.joinGame(gameId: gameId)
+//                showCircleBoard = true
+//            }
             })
             .navigationDestination(isPresented: $showCircleBoard) {
                 CircleBoardView()
