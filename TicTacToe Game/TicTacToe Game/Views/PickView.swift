@@ -5,7 +5,6 @@ struct PickView: View {
     @State var ShowSignedView: Bool = false
     @State var ShowSignedViewJoin: Bool = false
     @State var showJoinView = false
-    @State var isSignedIn = false
     @State var showCircleBoard = false
     @State var showCrossBoard = false
     @EnvironmentObject var controller: GameController
@@ -55,12 +54,9 @@ struct PickView: View {
             }.navigationDestination(isPresented: $showCrossBoard) {
                 CrossBoardView()
             }
-            .sheet(isPresented: $showJoinView, content: {GameJoinView(gameId: $gameId, show: $showJoinView
+            .sheet(isPresented: $showJoinView, content: {GameJoinView(gameId: $gameId, show: $showJoinView, showCircleView: $showCircleBoard
             )
-                //               .onDisappear{
-//                controller.joinGame(gameId: gameId)
-//                showCircleBoard = true
-//            }
+              
             })
             .navigationDestination(isPresented: $showCircleBoard) {
                 CircleBoardView()

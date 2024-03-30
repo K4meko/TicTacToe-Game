@@ -5,7 +5,7 @@ struct GameJoinView: View {
     @EnvironmentObject var controller: GameController
     @Binding var gameId: String;
     @Binding var show: Bool;
-//    @StateObject var controller = GameController()
+    @Binding var showCircleView: Bool;
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -17,6 +17,7 @@ struct GameJoinView: View {
                     if isValidGameId(gameId: gameId) {
                         // Join the game with the specified game ID
                         controller.joinGame(gameId: gameId)
+                        showCircleView = true;
                         show = false
                         print("Successfully joined the game!")
                     

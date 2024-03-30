@@ -30,9 +30,12 @@ struct CircleBoardView: View {
                     ]) {
                         ForEach(0 ..< 9) { index in
                             
-                        Button(action: { if controller.isCross == false {
+                        Button(action: { if (controller.isCross == false) {
                                
                                 controller.makeMove(atIndex: index);
+                            }
+                            else{
+                                return
                             }
                             }, label: {
                                 controller.items[index].padding().frame(width: 100, height: 100)
@@ -47,7 +50,7 @@ struct CircleBoardView: View {
                 }).alert(controller.winningType == .cross ? "Crosses win" : "Circles win", isPresented: $controller.isWon, actions: {
                     Button("Reset Game") {
                         controller.resetGame()
-                        controller.isCross = true
+                        
                     }
                     Button("Ok"){
                         

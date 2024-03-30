@@ -35,9 +35,7 @@ struct CrossBoardView: View {
                                 
                                 controller.makeMove(atIndex: index);
                             }
-                            else{
-                                return
-                            }
+                           
                         }, label: {
                             controller.items[index].padding().frame(width: 100, height: 100)
                         }).background(Color("White"))
@@ -69,9 +67,7 @@ struct CrossBoardView: View {
             Button(action: {controller.resetGame()}, label: {
                 Text("Reset game").frame(width: 200, height: 50).background(.red).clipShape(RoundedRectangle(cornerRadius:10)).foregroundStyle(.white).padding(50)
             })            }.onAppear {
-//                controller.createNewGame()
-//                controller.startListeningForMoves()
-//                
+              
             }.onAppear() {
                 print("id: " + controller.gameId)
             }
